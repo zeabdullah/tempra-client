@@ -1,0 +1,15 @@
+.btn {
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--rounded-xl);
+}
+
+.btn--contained {
+    box-shadow: inset 0 2px 0 0 rgb(255, 255, 255, 0.2),
+        0 1px 1px 0 rgb(0, 0, 0, 0.15);
+
+    color: var(--color-white);
+}
+
+.btn--outlined {
+    border: 2.5px solid;
+}
