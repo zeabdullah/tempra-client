@@ -1,0 +1,40 @@
+:root {
+    --color-white: hsla(0, 0%, 100%, 1);
+    --color-black: hsla(0, 0%, 0%, 1);
+
+    --color-gray-50: hsla(0, 0%, 94%, 1);
+    --color-gray-100: hsla(0, 0%, 86%, 1);
+    --color-gray-200: hsla(0, 0%, 75%, 1);
+    --color-gray-300: hsla(0, 0%, 57%, 1);
+    --color-gray-500: hsla(0, 0%, 34%, 1);
+    --color-gray-700: hsla(0, 0%, 22%, 1);
+    --color-gray-900: hsla(0, 0%, 14%, 1);
+
+    --color-primary-100: hsla(219, 78%, 91%, 1);
+    --color-primary-300: hsla(220, 92%, 76%, 1);
+    --color-primary-400: hsla(220, 97%, 68%, 1);
+    --color-primary-500: hsla(220, 77%, 52%, 1);
+    --color-primary-700: hsla(220, 70%, 36%, 1);
+    --color-primary-900: hsla(220, 86%, 19%, 1);
+
+    --color-success-100: hsla(101, 66%, 86%, 1);
+    --color-success-300: hsla(101, 92%, 76%, 1);
+    --color-success-500: hsla(101, 74%, 42%, 1);
+    --color-success-700: hsla(101, 80%, 29%, 1);
+    --color-success-900: hsla(101, 87%, 14%, 1);
+
+    --color-danger-100: hsla(2, 90%, 90%, 1);
+    --color-danger-300: hsla(3, 96%, 77%, 1);
+    --color-danger-500: hsla(3, 82%, 48%, 1);
+    --color-danger-700: hsla(3, 75%, 34%, 1);
+    --color-danger-900: hsla(4, 86%, 18%, 1);
+
+    --color-yellow-100: hsla(55, 90%, 92%, 1);
+    --color-yellow-300: hsla(54, 66%, 72%, 1);
+    --color-yellow-900: hsla(53, 95%, 13%, 1);
+
+    --color-magenta-100: hsla(325, 91%, 93%, 1);
+    --color-magenta-300: hsla(325, 76%, 79%, 1);
+    --color-magenta-500: hsla(327, 80%, 46%, 1);
+    --color-magenta-900: hsla(325, 86%, 18%, 1);
+}
