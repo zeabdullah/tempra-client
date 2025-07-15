@@ -48,12 +48,14 @@
 }
 .fs-label-text {
     font-size: var(--fs-label-text);
+    font-weight: var(--fw-semibold);
 }
 .fs-caption {
     font-size: var(--fs-caption);
 }
 .fs-button {
     font-size: var(--fs-button);
+    font-weight: var(--fw-bold);
 }
 
 .fw-regular {
