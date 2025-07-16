@@ -1,0 +1,57 @@
+.input__root {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__label {
+    color: currentColor;
+    min-height: 1.5rem; /* equal to icon height, to prevent any layout shift */
+    margin-bottom: var(--spacing-1);
+}
+
+.input__field {
+    padding: var(--spacing-3) var(--spacing-4);
+
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--color-gray-200);
+    outline: none;
+}
+.input__field,
+.input__field__field {
+    color: currentColor;
+}
+.input__root .input__field:focus,
+.input__root .input__field:has(:focus) {
+    border-color: var(--color-primary-500);
+}
+
+.input__field::placeholder {
+    color: var(--color-gray-300);
+}
+
+.input__field__field:focus {
+    outline: none;
+}
+
+.input__root--error {
+    color: var(--color-danger-700);
+}
+.input__root--error .input__field::placeholder,
+.input__root--error .input__field__field::placeholder {
+    color: hsl(from currentColor h s l / 0.4);
+}
+
+.input__root--readonly .input__field {
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-200);
+    color: var(--color-gray-500);
+}
+
+/* .input__root--readonly .input__field::placeholder,
+.input__root--readonly .input__field__field::placeholder {
+    color: hsl(from currentColor h s l / 0.4);
+} */
+
+.input__root--error .input__field {
+    border-color: currentColor;
+}
