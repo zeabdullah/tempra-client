@@ -1,13 +1,15 @@
 *,
-*::before,
-*::after {
+::after,
+::before,
+::backdrop,
+::file-selector-button {
     margin: 0;
     padding: 0;
-
+    border: 0 solid;
     box-sizing: border-box;
 }
 
-/* Prevent font size inflation on some devices like iOS */
+/* prevent font size inflation on some devices like iOS */
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
@@ -15,9 +17,9 @@ html {
 }
 
 body {
-    min-height: 100vh; /* declared twice as a fallback for unsupported browsers */
+    min-height: 100vh; /* for browsers that don't support `dvh` yet */
     min-height: 100dvh;
-    line-height: 1.5; /* A good default line height for body text */
+    line-height: 1.5; /* a good default for body text */
 }
 
 h1,
@@ -31,7 +33,7 @@ label {
 }
 
 button {
-    all: unset; /* reset all styles */
+    -webkit-appearance: button;
     cursor: pointer;
 }
 
@@ -47,8 +49,10 @@ input,
 button,
 textarea,
 select {
+    background-color: transparent;
     font-family: inherit;
     font-size: inherit;
+    color: inherit;
 }
 
 ul,

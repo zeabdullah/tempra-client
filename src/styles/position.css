@@ -1,0 +1,94 @@
+:root {
+    --z-index-10: 10;
+}
+
+/* Position types */
+.static {
+    position: static;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.fixed {
+    position: fixed;
+}
+.sticky {
+    position: sticky;
+}
+
+.isolation-isolate {
+    isolation: isolate;
+}
+.isolation-auto {
+    isolation: auto;
+}
+
+.inset-0 {
+    inset: 0;
+}
+.inset-auto {
+    inset: auto;
+}
+
+.top-0 {
+    top: 0;
+}
+.top-auto {
+    top: auto;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+.bottom-auto {
+    bottom: auto;
+}
+
+.start-0 {
+    inset-inline-start: 0;
+}
+.start-auto {
+    inset-inline-start: auto;
+}
+
+.end-0 {
+    inset-inline-end: 0;
+}
+.end-auto {
+    inset-inline-end: auto;
+}
+
+.z-0 {
+    z-index: 0;
+}
+.z-10 {
+    z-index: 10;
+}
+.z-20 {
+    z-index: 20;
+}
+.z-30 {
+    z-index: 30;
+}
+.z-40 {
+    z-index: 40;
+}
+
+.-z-0 {
+    z-index: -0;
+}
+.-z-10 {
+    z-index: -10;
+}
+.-z-20 {
+    z-index: -20;
+}
+.-z-30 {
+    z-index: -30;
+}
+.-z-40 {
+    z-index: -40;
+}
