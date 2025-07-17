@@ -6,8 +6,9 @@ import EyeIcon from "../../../icons/eye";
 
 export default function Input({
     error,
-    label,
     type = "text",
+    withPasswordToggle,
+    label,
     id,
     name,
     value,
@@ -17,9 +18,16 @@ export default function Input({
     placeholder,
     className,
 }) {
-    const _internalId = useId();
     const [showPassword, setShowPassword] = useState(false);
+    const _internalId = useId();
     const inputId = id ?? _internalId;
+
+    if (type !== "password" && withPasswordToggle) {
+        throw new Error(
+            "<Input> component's `withPasswordToggle` prop can only be used with type='password'",
+            { cause: this },
+        );
+    }
 
     let inputJsx = (
         <input
@@ -34,11 +42,11 @@ export default function Input({
             required={required}
         />
     );
-    if (type === "password") {
+    if (type === "password" && withPasswordToggle !== false) {
         inputJsx = (
             <div className="input__field rounded-xl d-flex justify-between align-items-center">
                 <input
-                    className="input__field__field"
+                    className="input__field__field flex-grow"
                     id={inputId}
                     name={name}
                     type={showPassword ? "text" : "password"}
@@ -50,7 +58,7 @@ export default function Input({
                 />
                 <button
                     type="button"
-                    style={{ fontSize: 20, height: 20, marginInlineStart: 8 }}
+                    className="icon-btn ms-2"
                     onClick={() => setShowPassword(!showPassword)}
                 >
                     {showPassword ? <EyeClosedIcon /> : <EyeIcon />}
@@ -70,7 +78,7 @@ export default function Input({
                 htmlFor={inputId}
             >
                 <span>{label}</span>
-                {error && <WarningCircleIcon style={{ fontSize: 20 }} />}
+                {error && <WarningCircleIcon className="icon-btn" />}
             </label>
             {inputJsx}
         </div>

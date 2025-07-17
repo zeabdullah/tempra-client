@@ -55,3 +55,8 @@
 .input__root--error .input__field {
     border-color: currentColor;
 }
+
+.icon-btn {
+    font-size: 1.25rem;
+    height: 1.25rem;
+}
