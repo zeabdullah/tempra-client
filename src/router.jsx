@@ -1,7 +1,7 @@
 import AuthLayout from "./components/shared/layouts/auth-layout";
 import RootLayout from "./components/shared/layouts/root-layout";
 import ForgotPasswordPage from "./pages/forgot-password";
-import HomePage from "./pages/home";
+import PublicFeedPage from "./pages/public-feed";
 import LoginPage from "./pages/login";
 import SignupPage from "./pages/signup";
 import { createBrowserRouter } from "react-router-dom";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <HomePage />,
+                element: <PublicFeedPage />,
             },
             {
                 element: <AuthLayout />,
