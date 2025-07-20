@@ -2,19 +2,32 @@ import { Link } from "react-router-dom";
 import EyeClosedIcon from "../../icons/eye-closed";
 import UserAvatar from "../shared/user-avatar";
 import "./styles.css";
+import cls from "../../lib/classnames";
+
+const cardClasses = {
+    blue: "time-capsule-card__body--primary",
+    gray: "time-capsule-card__body--gray",
+    yellow: "time-capsule-card__body--yellow",
+    magenta: "time-capsule-card__body--magenta",
+};
 
 export default function TimeCapsuleCard({
+    id,
     title,
     previewText,
     location,
     date,
     user,
+    color = "blue",
 }) {
-    const { id, name, avatar_url } = user;
+    const { id: user_id, name, avatar_url } = user;
 
     return (
         <div className="time-capsule-card">
-            <div className="time-capsule-card__body">
+            <Link
+                to={`/capsule/${id}`}
+                className={cls("time-capsule-card__body", cardClasses[color])}
+            >
                 <p
                     className="time-capsule-card__title fs-h2 line-clamp"
                     style={{ "--line-clamp": 3 }}
@@ -42,10 +55,10 @@ export default function TimeCapsuleCard({
                         </time>
                     </p>
                 </div>
-            </div>
+            </Link>
 
             <Link
-                to={`/user/${id}`}
+                to={`/user/${user_id}`}
                 className="time-capsule-card__footer fs-button"
             >
                 <UserAvatar

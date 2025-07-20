@@ -73,6 +73,7 @@ export default function PublicFeedPage() {
                     previewText="The Levant never fails to amaze—between the crisp mountain air and the quiet hum of"
                     location="Al Chouf, Lebanon"
                     date="2 days ago"
+                    color="yellow"
                     user={{
                         id: 123,
                         name: "Jack Mo",
@@ -84,6 +85,7 @@ export default function PublicFeedPage() {
                     previewText="The Levant never fails to amaze—between the crisp mountain air and the quiet hum of"
                     location="Al Chouf, Lebanon"
                     date="2 days ago"
+                    color="blue"
                     user={{
                         id: 123,
                         name: "Jack Mo",
@@ -95,6 +97,7 @@ export default function PublicFeedPage() {
                     previewText="The Levant never fails to amaze—between the crisp mountain air and the quiet hum of"
                     location="Al Chouf, Lebanon"
                     date="2 days ago"
+                    color="magenta"
                     user={{
                         id: 123,
                         name: "Jack Mo",
@@ -106,6 +109,7 @@ export default function PublicFeedPage() {
                     previewText="The Levant never fails to amaze—between the crisp mountain air and the quiet hum of"
                     location="Al Chouf, Lebanon"
                     date="2 days ago"
+                    color="yellow"
                     user={{
                         id: 123,
                         name: "Jack Mo",
@@ -117,6 +121,7 @@ export default function PublicFeedPage() {
                     previewText="The Levant never fails to amaze—between the crisp mountain air and the quiet hum of"
                     location="Al Chouf, Lebanon"
                     date="2 days ago"
+                    color="magenta"
                     user={{
                         id: 123,
                         name: "Jack Mo",
@@ -128,6 +133,7 @@ export default function PublicFeedPage() {
                     previewText="The Levant never fails to amaze—between the crisp mountain air and the quiet hum of"
                     location="Al Chouf, Lebanon"
                     date="2 days ago"
+                    color="gray"
                     user={{
                         id: 123,
                         name: "Jack Mo",
@@ -139,6 +145,7 @@ export default function PublicFeedPage() {
                     previewText="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati provident sunt sequi soluta, assumenda nulla modi nam rerum corrupti ducimus est quia accusamus hic?"
                     location="Qadisha Valley, Lebanon"
                     date="1 hour ago"
+                    color="blue"
                     user={{
                         id: 1323,
                         name: "Nour Hasan",

@@ -16,11 +16,39 @@
     padding-inline: var(--spacing-4);
     padding-block: var(--spacing-6);
 
-    border: 1px solid var(--color-primary-300);
+    border: 1px solid var(--card-color-border);
     border-radius: var(--rounded-2xl);
 
-    background-color: var(--color-primary-100);
-    color: var(--color-primary-900);
+    background-color: var(--card-color-bg);
+    color: var(--card-color-text);
+
+    transition: transform 250ms ease;
+}
+
+.time-capsule-card__body--primary {
+    --card-color-border: var(--color-primary-300);
+    --card-color-bg: var(--color-primary-100);
+    --card-color-text: var(--color-primary-900);
+}
+.time-capsule-card__body--gray {
+    --card-color-border: var(--color-gray-300);
+    --card-color-bg: var(--color-gray-100);
+    --card-color-text: var(--color-gray-900);
+}
+.time-capsule-card__body--yellow {
+    --card-color-border: var(--color-yellow-300);
+    --card-color-bg: var(--color-yellow-100);
+    --card-color-text: var(--color-yellow-900);
+}
+.time-capsule-card__body--magenta {
+    --card-color-border: var(--color-magenta-300);
+    --card-color-bg: var(--color-magenta-100);
+    --card-color-text: var(--color-magenta-900);
+}
+
+/* Feeling fun. */
+.time-capsule-card__body:hover {
+    transform: rotate(2deg) scale(1.015) translateY(-4%);
 }
 
 .time-capsule-card__title {
