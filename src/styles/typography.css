@@ -105,3 +105,21 @@
 .leading-relaxed {
     line-height: var(--leading-relaxed);
 }
+
+.line-clamp {
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: var(--line-clamp, 3);
+    -webkit-line-clamp: var(--line-clamp, 3);
+}
+
+.line-clamp-none {
+    overflow: visible;
+
+    display: block;
+    -webkit-box-orient: horizontal;
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+}
