@@ -1,6 +1,12 @@
+import { Navigate, Outlet } from "react-router-dom";
 import "./styles.css";
+import Auth from "../../../../lib/auth";
 
-export default function AuthLayout({ title, children }) {
+export default function AuthLayout() {
+    if (Auth.isAuthenticated()) {
+        return <Navigate to="/" />;
+    }
+
     return (
         <div className="auth-layout">
             <main className="auth-layout__main">
