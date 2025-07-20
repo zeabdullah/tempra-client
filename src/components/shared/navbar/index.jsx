@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import cls from "../../../lib/classnames";
 import useAuth from "../../../lib/hooks/use-auth";
-import TempraLogo from "../../TempraLogo";
+import TempraLogo from "../../tempra-logo";
 import UserAvatarDropdown from "../../user-avatar-dropdown";
 import { buttonVariants } from "../button/variants";
 import "./styles.css";
