@@ -12,4 +12,8 @@ export default class Auth {
             Boolean(localStorage.getItem("tempra--user"))
         );
     }
+
+    static logout() {
+        localStorage.clear();
+    }
 }
