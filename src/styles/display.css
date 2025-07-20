@@ -1,11 +1,20 @@
 .d-grid {
     display: grid;
 }
+.d-inline-grid {
+    display: inline-grid;
+}
 .d-flex {
     display: flex;
 }
+.d-inline-flex {
+    display: inline-flex;
+}
 .d-none {
     display: none;
+}
+.d-contents {
+    display: contents;
 }
 .d-block {
     display: block;
