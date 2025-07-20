@@ -68,41 +68,45 @@ export default function SignupPage() {
                     }}
                 >
                     <Input
-                        id="first_name"
-                        autoComplete="given-name"
-                        name="first_name"
                         label="First name"
                         type="text"
+                        id="first_name"
+                        name="first_name"
+                        placeholder="John"
+                        autoComplete="given-name"
                         error={error?.errors?.first_name}
                         style={{ flex: 1, width: "100%" }}
                         required
                     />
                     <Input
-                        id="last_name"
-                        autoComplete="family-name"
-                        name="last_name"
                         label="Last name"
                         type="text"
+                        id="last_name"
+                        name="last_name"
+                        placeholder="Doe"
+                        autoComplete="family-name"
                         error={error?.errors?.last_name}
                         style={{ flex: 1, width: "100%" }}
                         required
                     />
                 </div>
                 <Input
-                    id="email"
-                    autoComplete="email"
-                    name="email"
                     label="Email"
                     type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    autoComplete="email"
                     error={error?.errors?.email}
                     required
                 />
                 <Input
-                    id="password"
-                    autoComplete="new-password"
-                    name="password"
                     label="Password"
                     type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Your password..."
+                    autoComplete="new-password"
                     withPasswordToggle
                     error={error?.errors?.password}
                     required

@@ -62,6 +62,7 @@ export default function LoginPage() {
                     type="email"
                     id="email"
                     name="email"
+                    placeholder="john@example.com"
                     autoComplete="email"
                     required
                 />
@@ -70,6 +71,7 @@ export default function LoginPage() {
                     type="password"
                     id="password"
                     name="password"
+                    placeholder="Your password..."
                     autoComplete="current-password"
                     error={error?.errors?.password}
                     withPasswordToggle
