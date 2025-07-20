@@ -13,3 +13,8 @@
 .btn--outlined {
     border: 2.5px solid;
 }
+
+.btn:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+}

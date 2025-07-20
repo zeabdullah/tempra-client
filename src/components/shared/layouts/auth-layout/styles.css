@@ -15,18 +15,21 @@
     overflow: auto;
 }
 
-.main-container {
+.auth-layout__outlet {
+    --form-padding: var(--spacing-6);
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-9);
 
-    max-width: 400px;
+    padding-inline: var(--form-padding);
+    max-width: calc(400px + (var(--form-padding) * 2));
+    width: 100%;
 }
 
-.main-container__hgroup {
+.auth-layout-header {
 }
 
-.main-container__logo {
+.auth-layout-header__logo {
     display: block;
 
     margin-inline: auto;
@@ -43,4 +46,10 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+@media (max-width: 800px) {
+    .cover-img {
+        display: none;
+    }
 }

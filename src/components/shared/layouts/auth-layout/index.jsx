@@ -4,17 +4,8 @@ export default function AuthLayout({ title, children }) {
     return (
         <div className="auth-layout">
             <main className="auth-layout__main">
-                <div className="main-container text-center">
-                    <hgroup className="main-container__hgroup mx-auto">
-                        <img
-                            src="/tempra-logo-blue.svg"
-                            alt="Tempra logo"
-                            height={42}
-                            className="main-container__logo"
-                        />
-                        <h1 className="fs-h2">{title}</h1>
-                    </hgroup>
-                    {children}
+                <div className="auth-layout__outlet text-center">
+                    <Outlet />
                 </div>
             </main>
 
