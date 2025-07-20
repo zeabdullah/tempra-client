@@ -5,12 +5,13 @@ import { buttonVariants } from "../../button/variants";
 import PlusIcon from "../../../../icons/plus";
 import cls from "../../../../lib/classnames";
 import useAuth from "../../../../lib/hooks/use-auth";
+import { NO_NAVBAR_PAGES } from "../../../../router";
 
 export default function RootLayout() {
     const session = useAuth();
     const { pathname } = useLocation();
 
-    const isAuthPage = pathname === "/login" || pathname === "/signup";
+    const isAuthPage = NO_NAVBAR_PAGES.includes(pathname);
 
     return (
         <div

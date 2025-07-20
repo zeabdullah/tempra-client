@@ -1,9 +1,12 @@
 import AuthLayout from "./components/shared/layouts/auth-layout";
 import RootLayout from "./components/shared/layouts/root-layout";
+import ForgotPasswordPage from "./pages/forgot-password";
 import HomePage from "./pages/home";
 import LoginPage from "./pages/login";
 import SignupPage from "./pages/signup";
 import { createBrowserRouter } from "react-router-dom";
+
+export const NO_NAVBAR_PAGES = ["/login", "/signup", "/forgot-password"];
 
 const router = createBrowserRouter([
     {
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
                     {
                         path: "signup",
                         element: <SignupPage />,
+                    },
+                    {
+                        path: "forgot-password",
+                        element: <ForgotPasswordPage />,
                     },
                 ],
             },
