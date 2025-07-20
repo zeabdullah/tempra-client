@@ -1,8 +1,15 @@
-:root {
-    --z-index-10: 10;
+/* text positions */
+.text-start {
+    text-align: start;
+}
+.text-center {
+    text-align: center;
+}
+.text-end {
+    text-align: end;
 }
 
-/* Position types */
+/* position types */
 .static {
     position: static;
 }

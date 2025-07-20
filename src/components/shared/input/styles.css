@@ -25,7 +25,8 @@
     border-color: var(--color-primary-500);
 }
 
-.input__field::placeholder {
+.input__field::placeholder,
+.input__field__field::placeholder {
     color: var(--color-gray-300);
 }
 
@@ -46,11 +47,6 @@
     border-color: var(--color-gray-200);
     color: var(--color-gray-500);
 }
-
-/* .input__root--readonly .input__field::placeholder,
-.input__root--readonly .input__field__field::placeholder {
-    color: hsl(from currentColor h s l / 0.4);
-} */
 
 .input__root--error .input__field {
     border-color: currentColor;

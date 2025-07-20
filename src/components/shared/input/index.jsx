@@ -1,8 +1,9 @@
 import { useState, useId } from "react";
 import WarningCircleIcon from "../../../icons/warning-circle";
-import "./styles.css";
 import EyeClosedIcon from "../../../icons/eye-closed";
 import EyeIcon from "../../../icons/eye";
+import cls from "../../../lib/classnames";
+import "./styles.css";
 
 export default function Input({
     error,
@@ -10,51 +11,36 @@ export default function Input({
     withPasswordToggle,
     label,
     id,
-    name,
-    value,
-    onChange,
     readOnly,
-    required,
-    placeholder,
     className,
+    ...props
 }) {
     const [showPassword, setShowPassword] = useState(false);
     const _internalId = useId();
-    const inputId = id ?? _internalId;
+    const inputId = id ?? _internalId; // set an internal id for semantics and a11y if not provided by the user
 
     if (type !== "password" && withPasswordToggle) {
         throw new Error(
             "<Input> component's `withPasswordToggle` prop can only be used with type='password'",
-            { cause: this },
         );
     }
 
     let inputJsx = (
         <input
-            className="input__field rounded-xl"
+            className={cls("input__field rounded-xl", className)}
             id={inputId}
-            name={name}
             type={type}
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-            readOnly={readOnly}
-            required={required}
+            {...props}
         />
     );
     if (type === "password" && withPasswordToggle !== false) {
         inputJsx = (
             <div className="input__field rounded-xl d-flex justify-between align-items-center">
                 <input
-                    className="input__field__field flex-grow"
+                    className={cls("input__field__field flex-grow", className)}
                     id={inputId}
-                    name={name}
                     type={showPassword ? "text" : "password"}
-                    value={value}
-                    onChange={onChange}
-                    placeholder={placeholder}
-                    readOnly={readOnly}
-                    required={required}
+                    {...props}
                 />
                 <button
                     type="button"
@@ -81,6 +67,11 @@ export default function Input({
                 {error && <WarningCircleIcon className="icon-btn" />}
             </label>
             {inputJsx}
+            {error && (
+                <div className="fs-caption text-start text-danger-700 py-1">
+                    {error}
+                </div>
+            )}
         </div>
     );
 }

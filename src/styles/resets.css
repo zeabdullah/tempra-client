@@ -37,6 +37,10 @@ button {
     cursor: pointer;
 }
 
+a {
+    text-decoration: unset;
+}
+
 h1,
 h2,
 h3,
