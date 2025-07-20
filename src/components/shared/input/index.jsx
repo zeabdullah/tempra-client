@@ -67,6 +67,11 @@ export default function Input({
                 {error && <WarningCircleIcon className="icon-btn" />}
             </label>
             {inputJsx}
+            {error && (
+                <div className="fs-caption text-start text-danger-700 py-1">
+                    {error}
+                </div>
+            )}
         </div>
     );
 }
