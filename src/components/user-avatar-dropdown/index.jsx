@@ -23,6 +23,14 @@ export default function UserAvatarDropdown() {
                     navigate("/settings");
                     break;
                 }
+                case "my-capsules": {
+                    navigate("/my-capsules");
+                    break;
+                }
+                case "new-capsule": {
+                    navigate("/new-capsule");
+                    break;
+                }
             }
         },
         [navigate],
@@ -37,8 +45,10 @@ export default function UserAvatarDropdown() {
                 onChange={handleSelect}
             >
                 <option value="" disabled></option>
-                <option value="logout">Log out</option>
                 <option value="settings">Account Settings</option>
+                <option value="logout">Log out</option>
+                <option value="new-capsules">New time capsule</option>
+                <option value="my-capsules">My capsules</option>
             </select>
 
             <UserAvatar
