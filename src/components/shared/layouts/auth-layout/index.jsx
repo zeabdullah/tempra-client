@@ -4,7 +4,7 @@ import Auth from "../../../../lib/auth";
 
 export default function AuthLayout() {
     if (Auth.isAuthenticated()) {
-        return <Navigate to="/" />;
+        return <Navigate to="/" replace />;
     }
 
     return (

@@ -13,14 +13,19 @@ const avatarClasses = {
     xl: "user-avatar--xl",
 };
 
-export default function UserAvatar({ src, alt = "Avatar", size = "md" }) {
+export default function UserAvatar({
+    src,
+    alt = "Avatar",
+    size = "md",
+    className,
+}) {
     return (
         <img
             src={src}
             alt={alt}
             width={avatarSizes[size]}
             height={avatarSizes[size]}
-            className={cls("user-avatar", avatarClasses[size])}
+            className={cls("user-avatar", avatarClasses[size], className)}
         />
     );
 }
