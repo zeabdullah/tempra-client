@@ -31,6 +31,14 @@
     --spacing-96: 384px;
 }
 
+.container {
+    max-width: 72rem;
+    width: 100%;
+
+    padding-inline: var(--spacing-4);
+    margin-inline: auto;
+}
+
 .m-auto {
     margin: auto;
 }

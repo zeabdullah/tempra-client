@@ -21,3 +21,15 @@ body {
     color: var(--color-gray-900);
     font-size: var(--fs-body);
 }
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

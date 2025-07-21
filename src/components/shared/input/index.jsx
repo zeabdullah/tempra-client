@@ -59,13 +59,15 @@ export default function Input({
                 error ? "input__root--error" : ""
             } ${readOnly ? "input__root--readonly" : ""} ${className ?? ""}`}
         >
-            <label
-                className="input__label fs-label-text d-flex justify-between align-items-center"
-                htmlFor={inputId}
-            >
-                <span>{label}</span>
-                {error && <WarningCircleIcon className="icon-btn" />}
-            </label>
+            {label && (
+                <label
+                    className="input__label fs-label-text d-flex justify-between align-items-center"
+                    htmlFor={inputId}
+                >
+                    <span>{label}</span>
+                    {error && <WarningCircleIcon className="icon-btn" />}
+                </label>
+            )}
             {inputJsx}
             {error && (
                 <div className="fs-caption text-start text-danger-700 py-1">

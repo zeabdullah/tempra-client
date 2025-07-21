@@ -39,6 +39,7 @@ button {
 
 a {
     text-decoration: unset;
+    color: currentColor;
 }
 
 h1,

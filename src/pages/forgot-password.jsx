@@ -23,8 +23,8 @@ export default function ForgotPasswordPage() {
         // } catch (err) {
         //     if (err instanceof AxiosError) {
         //         setError(err.response.data);
-        //         console.log(err.response?.data);
-        //     } else console.log(err);
+        //         console.warn(err.response?.data);
+        //     } else console.warn(err);
         // }
         setIsSubmitting(false);
     }
