@@ -12,7 +12,7 @@
     align-items: flex-start;
     row-gap: var(--spacing-3);
 
-    height: 22.5rem;
+    min-height: 22.5rem;
     padding-inline: var(--spacing-4);
     padding-block: var(--spacing-6);
 

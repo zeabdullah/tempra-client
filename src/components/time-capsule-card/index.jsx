@@ -3,13 +3,7 @@ import EyeClosedIcon from "../../icons/eye-closed";
 import UserAvatar from "../shared/user-avatar";
 import "./styles.css";
 import cls from "../../lib/classnames";
-
-const cardClasses = {
-    blue: "time-capsule-card__body--primary",
-    gray: "time-capsule-card__body--gray",
-    yellow: "time-capsule-card__body--yellow",
-    magenta: "time-capsule-card__body--magenta",
-};
+import { timeCapsuleCardClasses } from "./variants";
 
 export default function TimeCapsuleCard({
     id,
@@ -26,7 +20,10 @@ export default function TimeCapsuleCard({
         <div className="time-capsule-card">
             <Link
                 to={`/capsule/${id}`}
-                className={cls("time-capsule-card__body", cardClasses[color])}
+                className={cls(
+                    "time-capsule-card__body",
+                    timeCapsuleCardClasses[color],
+                )}
             >
                 <p
                     className="time-capsule-card__title fs-h2 line-clamp"
