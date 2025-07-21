@@ -29,3 +29,12 @@
     align-items: center;
     gap: var(--spacing-4);
 }
+
+.navbar__actions--logged-in {
+    display: none;
+}
+@media (min-width: 800px) {
+    .navbar__actions--logged-in {
+        display: contents;
+    }
+}

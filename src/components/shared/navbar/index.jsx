@@ -21,7 +21,7 @@ export default function Navbar() {
                 <div className="navbar__actions-wrapper">
                     <div className="navbar__actions">
                         {session?.isLoggedIn ? (
-                            <>
+                            <div className="navbar__actions--logged-in">
                                 <Button
                                     className={cls(
                                         buttonVariants.faded.primary,
@@ -34,7 +34,7 @@ export default function Navbar() {
                                 <Link to="/my-capsules" className="fs-button">
                                     My Capsules
                                 </Link>
-                            </>
+                            </div>
                         ) : (
                             <>
                                 <Link

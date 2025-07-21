@@ -47,7 +47,7 @@ export default function UserAvatarDropdown() {
                 <option value="" disabled></option>
                 <option value="settings">Account Settings</option>
                 <option value="logout">Log out</option>
-                <option value="new-capsules">New time capsule</option>
+                <option value="new-capsule">New time capsule</option>
                 <option value="my-capsules">My capsules</option>
             </select>
 
