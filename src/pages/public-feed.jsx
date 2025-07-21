@@ -9,6 +9,7 @@ import useDebounce from "../lib/hooks/use-debounce";
 const cache = {};
 
 export default function PublicFeedPage() {
+    const [error, setError] = useState(null);
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [search, setSearch] = useState("");
@@ -24,7 +25,6 @@ export default function PublicFeedPage() {
 
         async function fetchCapsules() {
             setIsLoading(true);
-
             try {
                 let response;
                 if (cache[debouncedSearch]) {
@@ -43,11 +43,13 @@ export default function PublicFeedPage() {
 
                 setData(response.data);
             } catch (err) {
-                console.warn(
-                    err instanceof AxiosError && !(err instanceof CanceledError)
-                        ? err.response.data.message
-                        : err,
-                );
+                if (
+                    err instanceof AxiosError &&
+                    !(err instanceof CanceledError)
+                ) {
+                    setError(err.response.data.message);
+                    console.warn(err.response.data.message);
+                }
             }
             setIsLoading(false);
         }
@@ -60,7 +62,9 @@ export default function PublicFeedPage() {
 
     return (
         <div className="my-16 container">
-            <section>
+            <h1 className="fs-h1">Public Feed</h1>
+
+            <section className="my-8">
                 <div
                     style={{
                         display: "flex",
@@ -119,6 +123,13 @@ export default function PublicFeedPage() {
             >
                 {isLoading ? (
                     <LoadingSkeleton />
+                ) : error ? (
+                    <div className="fs-h3 text-danger-700">
+                        <p>Whoops! Something went wrong.</p>
+                        <pre>{error}</pre>
+                    </div>
+                ) : data?.payload?.items.length === 0 ? (
+                    <p className="fs-h3">No capsules to show...</p>
                 ) : (
                     data?.payload?.items.map(item => (
                         <TimeCapsuleCard
@@ -126,7 +137,7 @@ export default function PublicFeedPage() {
                             title={item.title}
                             previewText={item.content_text}
                             location={item.location}
-                            date={formatDate(new Date(item.created_at))}
+                            date={formatDate(new Date(item.reveal_date))}
                             color={item.color}
                             user={{
                                 id: 123,
