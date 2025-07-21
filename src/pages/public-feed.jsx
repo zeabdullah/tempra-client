@@ -61,7 +61,7 @@ export default function PublicFeedPage() {
     }, [debouncedSearch]);
 
     return (
-        <div className="my-16 container">
+        <main className="my-16 container">
             <h1 className="fs-h1">Public Feed</h1>
 
             <section className="my-8">
@@ -133,6 +133,7 @@ export default function PublicFeedPage() {
                 ) : (
                     data?.payload?.items.map(item => (
                         <TimeCapsuleCard
+                            id={item.id}
                             key={item.id}
                             title={item.title}
                             previewText={item.content_text}
@@ -148,7 +149,7 @@ export default function PublicFeedPage() {
                     ))
                 )}
             </section>
-        </div>
+        </main>
     );
 }
 
