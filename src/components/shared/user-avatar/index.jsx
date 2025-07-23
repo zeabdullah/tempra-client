@@ -2,12 +2,14 @@ import cls from "../../../lib/classnames";
 import "./styles.css";
 
 const avatarSizes = {
-    sm: 32,
+    xs: 32,
+    sm: 40,
     md: 48,
     xl: 160,
 };
 
 const avatarClasses = {
+    xs: "user-avatar--xs",
     sm: "user-avatar--sm",
     md: "user-avatar--md",
     xl: "user-avatar--xl",

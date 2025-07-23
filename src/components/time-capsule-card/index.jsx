@@ -14,7 +14,7 @@ export default function TimeCapsuleCard({
     user,
     color = "blue",
 }) {
-    const { id: user_id, name, avatar_url } = user;
+    const { id: user_id, first_name, last_name, avatar_url } = user;
 
     return (
         <div className="time-capsule-card">
@@ -61,9 +61,11 @@ export default function TimeCapsuleCard({
                 <UserAvatar
                     className="time-capsule-card__user-avatar"
                     src={avatar_url ?? "https://i.pravatar.cc/64?u=29485"}
-                    size="sm"
+                    size="xs"
                 />
-                <span className="time-capsule-card__user-name">{name}</span>
+                <span className="time-capsule-card__user-name">
+                    {first_name} {last_name}
+                </span>
             </Link>
         </div>
     );

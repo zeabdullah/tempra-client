@@ -129,11 +129,7 @@ export default function PublicFeedPage() {
                             location={item.location}
                             date={formatDate(new Date(item.reveal_date))}
                             color={item.color}
-                            user={{
-                                id: 123,
-                                name: "Jack Mo",
-                                avatar_url: "https://i.pravatar.cc/150?u=95",
-                            }}
+                            user={item.user}
                         />
                     ))
                 )}

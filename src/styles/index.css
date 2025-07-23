@@ -1,5 +1,6 @@
 @import "./resets.css";
-@import "./spacing.css";
+@import "./spacing/index.css";
+@import "./text-transform.css";
 @import "./display.css";
 @import "./position.css";
 @import "./colors.css";
@@ -37,4 +38,16 @@ body {
 
 input[type="file"]::file-selector-button {
     display: none;
+}
+
+.breadcrumbs {
+    display: flex;
+    gap: var(--spacing-3);
+
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+}
+.breadcrumbs > a:hover {
+    text-decoration: underline;
 }

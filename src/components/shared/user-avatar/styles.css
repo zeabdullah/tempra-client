@@ -4,9 +4,13 @@
     outline-offset: 1px;
 }
 
-.user-avatar--sm {
+.user-avatar--xs {
     width: 2rem;
     height: 2rem;
+}
+.user-avatar--sm {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 .user-avatar--md {
     width: 3rem;
