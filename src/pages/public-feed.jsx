@@ -5,8 +5,7 @@ import { api } from "../api/api";
 import { AxiosError, CanceledError } from "axios";
 import { sleep } from "../lib/sleep";
 import useDebounce from "../lib/hooks/use-debounce";
-
-const cache = {};
+import LoadingSkeleton from "../components/time-capsule-card/loading-skeleton";
 
 export default function PublicFeedPage() {
     const [error, setError] = useState(null);
@@ -26,21 +25,11 @@ export default function PublicFeedPage() {
         async function fetchCapsules() {
             setIsLoading(true);
             try {
-                let response;
-                if (cache[debouncedSearch]) {
-                    response = cache[debouncedSearch];
-                } else {
-                    await sleep(500);
-                    response = await api.get("/time_capsules", {
-                        params: { title: debouncedSearch, page: 1 },
-                        signal: abortController.signal,
-                    });
-                }
-
-                if (!cache[debouncedSearch]) {
-                    cache[debouncedSearch] = response;
-                }
-
+                await sleep(500); // a fake delay...
+                const response = await api.get("/time_capsules", {
+                    params: { title: debouncedSearch, page: 1 },
+                    signal: abortController.signal,
+                });
                 setData(response.data);
             } catch (err) {
                 if (
@@ -151,22 +140,4 @@ export default function PublicFeedPage() {
             </section>
         </main>
     );
-}
-
-// function RadioGroup() {
-//     return null;
-// }
-
-function LoadingSkeleton() {
-    return Array.from({ length: 11 }).map((_, idx) => (
-        <div
-            key={idx}
-            style={{
-                borderRadius: 16,
-                backgroundColor: "var(--color-gray-100)",
-                height: "22.5rem",
-                animation: "pulse 2.5s infinite ease-in-out",
-            }}
-        />
-    ));
 }

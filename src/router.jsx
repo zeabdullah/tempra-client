@@ -1,11 +1,12 @@
 import AuthLayout from "./components/shared/layouts/auth-layout";
 import RootLayout from "./components/shared/layouts/root-layout";
 import RequireAuth from "./components/shared/layouts/require-auth";
-import ForgotPasswordPage from "./pages/forgot-password";
-import PublicFeedPage from "./pages/public-feed";
 import LoginPage from "./pages/login";
-import MyCapsulesPage from "./pages/my-capsules";
 import SignupPage from "./pages/signup";
+import PublicFeedPage from "./pages/public-feed";
+import MyCapsulesPage from "./pages/my-capsules";
+import NewCapsulePage from "./pages/new-capsule";
+import ForgotPasswordPage from "./pages/forgot-password";
 import { createBrowserRouter } from "react-router-dom";
 
 export const NO_NAVBAR_PAGES = ["/login", "/signup", "/forgot-password"];
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 element: <RequireAuth />,
                 children: [
+                    {
+                        path: "new-capsule",
+                        element: <NewCapsulePage />,
+                    },
                     {
                         path: "my-capsules",
                         element: <MyCapsulesPage />,

@@ -1,0 +1,6 @@
+.card-animate {
+    transition: transform 250ms ease;
+}
+.card-animate:hover {
+    transform: rotate(2deg) scale(1.015) translateY(-5%);
+}

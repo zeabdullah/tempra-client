@@ -20,8 +20,8 @@
 .input__field__field {
     color: currentColor;
 }
-.input__root .input__field:focus,
-.input__root .input__field:has(:focus) {
+.input__field:focus,
+.input__field:has(:focus) {
     border-color: var(--color-primary-500);
 }
 
@@ -55,4 +55,11 @@
 .icon-btn {
     font-size: 1.25rem;
     height: 1.25rem;
+}
+
+.input__field--file {
+    cursor: pointer;
+}
+.input__field--file::file-selector-button {
+    display: none;
 }

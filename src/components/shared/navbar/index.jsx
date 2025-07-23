@@ -6,7 +6,6 @@ import UserAvatarDropdown from "../../user-avatar-dropdown";
 import { buttonVariants } from "../button/variants";
 import "./styles.css";
 import PlusIcon from "../../../icons/plus";
-import Button from "../button";
 
 export default function Navbar() {
     const session = useAuth();
@@ -22,15 +21,17 @@ export default function Navbar() {
                     <div className="navbar__actions">
                         {session?.isLoggedIn ? (
                             <div className="navbar__actions--logged-in">
-                                <Button
+                                <Link
+                                    to="/new-capsule"
                                     className={cls(
+                                        "btn fs-button",
                                         buttonVariants.faded.primary,
                                         "d-flex align-items-center",
                                     )}
                                 >
                                     <PlusIcon className="fs-body me-1" />
                                     New time capsule
-                                </Button>
+                                </Link>
                                 <Link to="/my-capsules" className="fs-button">
                                     My Capsules
                                 </Link>

@@ -28,7 +28,7 @@ export default function MyTimeCapsuleCard({
             <Link
                 to={`/capsule/${id}`}
                 className={cls(
-                    "time-capsule-card__body",
+                    "time-capsule-card__body card-animate",
                     timeCapsuleCardClasses[color],
                 )}
             >

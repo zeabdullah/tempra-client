@@ -13,6 +13,7 @@ export default function RootLayout() {
                 minHeight: "100vh",
                 display: "flex",
                 flexDirection: "column",
+                accentColor: "var(--color-primary-500)",
             }}
         >
             {!isAuthPage && <Navbar />}

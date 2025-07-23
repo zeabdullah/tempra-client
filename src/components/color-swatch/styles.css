@@ -1,0 +1,32 @@
+.color-swatch {
+    width: 35px;
+    height: 25px;
+
+    border: 2.5px solid white;
+    border-radius: var(--rounded-base);
+    box-shadow: 0 0 0 0 var(--color-gray-700);
+
+    transition-property: box-shadow;
+    transition-duration: 100ms;
+    transition-timing-function: ease;
+}
+
+.color-swatch--selected {
+    box-shadow: 0 0 0 3px var(--color-gray-700);
+}
+
+.color-swatch--blue {
+    background-color: var(--color-primary-500);
+}
+
+.color-swatch--yellow {
+    background-color: var(--color-yellow-300);
+}
+
+.color-swatch--magenta {
+    background-color: var(--color-magenta-300);
+}
+
+.color-swatch--gray {
+    background-color: var(--color-gray-700);
+}

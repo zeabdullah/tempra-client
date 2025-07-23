@@ -6,6 +6,7 @@
 @import "./radii.css";
 @import "./fonts.css";
 @import "./typography.css"; /* keep this last because it depends on some css variables from other modules */
+@import "./cards.css";
 
 :root {
     font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
@@ -32,4 +33,8 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+input[type="file"]::file-selector-button {
+    display: none;
 }

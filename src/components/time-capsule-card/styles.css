@@ -1,7 +1,7 @@
 .time-capsule-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     row-gap: var(--spacing-3);
 }
 
@@ -46,11 +46,6 @@
     --card-color-text: var(--color-magenta-900);
 }
 
-/* Feeling fun. */
-.time-capsule-card__body:hover {
-    transform: rotate(2deg) scale(1.015) translateY(-4%);
-}
-
 .time-capsule-card__title {
 }
 
@@ -78,7 +73,6 @@
 
 .time-capsule-card__footer {
     display: flex;
-    justify-content: center;
     align-items: center;
     column-gap: var(--spacing-2);
 }

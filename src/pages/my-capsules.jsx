@@ -6,8 +6,7 @@ import { sleep } from "../lib/sleep";
 import useDebounce from "../lib/hooks/use-debounce";
 import Auth from "../lib/auth";
 import MyTimeCapsuleCard from "../components/my-time-capsule-card";
-
-const cache = {};
+import LoadingSkeleton from "../components/time-capsule-card/loading-skeleton";
 
 export default function PublicFeedPage() {
     const [error, setError] = useState(null);
@@ -29,22 +28,12 @@ export default function PublicFeedPage() {
         async function fetchMyCapsules() {
             setIsLoading(true);
             try {
-                let response;
-                if (cache[debouncedSearch]) {
-                    response = cache[debouncedSearch];
-                } else {
-                    await sleep(500);
-                    response = await api.get("/my_time_capsules", {
-                        headers: { Authorization: `Bearer ${Auth.getToken()}` },
-                        params: { title: debouncedSearch, page: 1 },
-                        signal: abortController.signal,
-                    });
-                }
-
-                if (!cache[debouncedSearch]) {
-                    cache[debouncedSearch] = response;
-                }
-
+                await sleep(500); // a fake delay...
+                const response = await api.get("/my_time_capsules", {
+                    headers: { Authorization: `Bearer ${Auth.getToken()}` },
+                    params: { title: debouncedSearch, page: 1 },
+                    signal: abortController.signal,
+                });
                 setData(response.data);
             } catch (err) {
                 if (
@@ -160,18 +149,4 @@ export default function PublicFeedPage() {
             </section>
         </main>
     );
-}
-
-function LoadingSkeleton() {
-    return Array.from({ length: 11 }).map((_, idx) => (
-        <div
-            key={idx}
-            style={{
-                borderRadius: 16,
-                backgroundColor: "var(--color-gray-100)",
-                height: "22.5rem",
-                animation: "pulse 2.5s infinite ease-in-out",
-            }}
-        />
-    ));
 }

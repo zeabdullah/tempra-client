@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 
+// TODO: rename to `useSession`
 export default function useAuth() {
+    // TODO: refactor and/or move this into the `useMemo`
     const user = localStorage.getItem("tempra--user");
     const jwt = localStorage.getItem("tempra--jwt");
 
