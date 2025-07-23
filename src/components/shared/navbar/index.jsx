@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import cls from "../../../lib/classnames";
-import useAuth from "../../../lib/hooks/use-auth";
+import useSession from "../../../lib/hooks/use-session";
 import TempraLogo from "../../tempra-logo";
 import UserAvatarDropdown from "../../user-avatar-dropdown";
 import { buttonVariants } from "../button/variants";
@@ -8,7 +8,7 @@ import "./styles.css";
 import PlusIcon from "../../../icons/plus";
 
 export default function Navbar() {
-    const session = useAuth();
+    const session = useSession();
 
     return (
         <header className="navbar">

@@ -44,29 +44,13 @@ export default function SignupPage() {
         <>
             <AuthLayoutHeader title="Create a new account" />
 
-            <form
-                onSubmit={handleSubmit}
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "var(--spacing-4)",
-                }}
-            >
+            <form onSubmit={handleSubmit} className="auth-layout-form">
                 {error && (
-                    <p
-                        style={{ border: "1px solid var(--color-danger-300)" }}
-                        className="bg-danger-100 text-danger-900 rounded-lg p-3"
-                    >
+                    <p className="alert-box border-danger-300 bg-danger-100 text-danger-900 rounded-lg p-3">
                         {error.message}
                     </p>
                 )}
-                <div
-                    style={{
-                        display: "flex",
-                        gap: "var(--spacing-3)",
-                        alignItems: "flex-start",
-                    }}
-                >
+                <div className="d-flex gap-3 align-items-start">
                     <Input
                         label="First name"
                         type="text"
@@ -75,7 +59,7 @@ export default function SignupPage() {
                         placeholder="John"
                         autoComplete="given-name"
                         error={error?.errors?.first_name}
-                        style={{ flex: 1, width: "100%" }}
+                        className="flex-1 w-full"
                         required
                     />
                     <Input
@@ -86,7 +70,7 @@ export default function SignupPage() {
                         placeholder="Doe"
                         autoComplete="family-name"
                         error={error?.errors?.last_name}
-                        style={{ flex: 1, width: "100%" }}
+                        className="flex-1 w-full"
                         required
                     />
                 </div>

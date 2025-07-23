@@ -1,0 +1,35 @@
+.title-input {
+    outline: none;
+    min-width: 100%;
+}
+
+.main-content {
+    max-width: 30rem;
+}
+
+.visibility-group {
+    width: fit-content;
+}
+
+.color-group {
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    padding: var(--spacing-1\.5);
+}
+
+.checkbox {
+    height: 0.85lh;
+    aspect-ratio: 1 / 1;
+    margin-inline-end: var(--spacing-2);
+}
+
+.content-textarea {
+    min-height: 4lh;
+    min-width: 100%;
+    resize: vertical;
+}
+
+.tags {
+    max-width: 25rem;
+}

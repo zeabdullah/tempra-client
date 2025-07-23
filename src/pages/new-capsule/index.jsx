@@ -1,21 +1,22 @@
 import { AxiosError } from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../api/api";
-import ColorSwatch from "../components/color-swatch";
-import Button from "../components/shared/button";
-import { buttonVariants } from "../components/shared/button/variants";
-import Input from "../components/shared/input";
-import RadioItem from "../components/shared/radio-item";
-import ImagesSquareIcon from "../icons/duotone/images-square";
-import PenNibIcon from "../icons/duotone/pen-nib";
-import GlobeHemisphereWestIcon from "../icons/globe-hemisphere-west";
-import InfoIcon from "../icons/info";
-import LinkIcon from "../icons/link";
-import LockIcon from "../icons/lock";
-import Auth from "../lib/auth";
-import { toBase64 } from "../lib/base64";
-import cls from "../lib/classnames";
+import { api } from "../../api/api";
+import ColorSwatch from "../../components/color-swatch";
+import TypeCardItem from "../../components/type-card-item";
+import Button from "../../components/shared/button";
+import { buttonVariants } from "../../components/shared/button/variants";
+import Input from "../../components/shared/input";
+import RadioItem from "../../components/shared/radio-item";
+import ImagesSquareIcon from "../../icons/duotone/images-square";
+import PenNibIcon from "../../icons/duotone/pen-nib";
+import GlobeHemisphereWestIcon from "../../icons/globe-hemisphere-west";
+import InfoIcon from "../../icons/info";
+import LinkIcon from "../../icons/link";
+import LockIcon from "../../icons/lock";
+import Auth from "../../lib/auth";
+import { toBase64 } from "../../lib/base64";
+import "./styles.css";
 
 const { format: formatDate } = new Intl.DateTimeFormat("UTC", {
     day: "2-digit",
@@ -90,11 +91,7 @@ export default function NewCapsulePage() {
             {error && (
                 <p
                     id="error-msg"
-                    style={{
-                        border: "1px solid var(--color-danger-300)",
-                        marginBottom: 32,
-                    }}
-                    className="bg-danger-100 text-danger-900 rounded-lg p-3"
+                    className="alert-box border-danger-300 bg-danger-100 text-danger-900 rounded-lg p-3 mb-8"
                 >
                     {error.message}
                 </p>
@@ -103,22 +100,14 @@ export default function NewCapsulePage() {
             <input
                 id="title"
                 name="title"
-                className="fs-h1"
-                style={{ outline: "none", minWidth: "100%" }}
+                className="title-input fs-h1"
                 placeholder="Title (optional)"
                 autoFocus
             />
             <p className="my-8 text-gray-500">Choose the type of capsule:</p>
 
-            <section style={{ maxWidth: "30rem" }}>
-                <div
-                    style={{
-                        display: "flex",
-                        gap: 12,
-                        flexWrap: "wrap",
-                        marginBottom: 12,
-                    }}
-                >
+            <section className="main-content">
+                <div className="d-flex flex-wrap gap-3 mb-3">
                     <TypeCardItem
                         icon={PenNibIcon}
                         text="Write something..."
@@ -142,15 +131,8 @@ export default function NewCapsulePage() {
                                 }
                                 accept="image/png, image,jpeg, image/jpg"
                             />
-                            <div
-                                className="text-gray-500"
-                                style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    gap: 4,
-                                }}
-                            >
-                                <InfoIcon style={{ fontSize: 18 }} />
+                            <div className="d-flex align-items-center gap-1 text-gray-500">
+                                <InfoIcon className="fs-body" />
                                 <p className="fs-caption">
                                     Maximum upload size is 3 MB.
                                 </p>
@@ -166,12 +148,7 @@ export default function NewCapsulePage() {
                             rows={8}
                             value={contentText}
                             onChange={e => setContentText(e.target.value)}
-                            className="input__field rounded-xl"
-                            style={{
-                                minHeight: "4lh",
-                                minWidth: "100%",
-                                resize: "vertical",
-                            }}
+                            className="input__field content-textarea rounded-xl"
                         />
                     )}
                 </div>
@@ -179,14 +156,7 @@ export default function NewCapsulePage() {
 
             <section>
                 <div className="my-8">
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "flex-start",
-                            gap: 12,
-                        }}
-                        className="my-4"
-                    >
+                    <div className="d-flex align-items-start gap-3 mb-4">
                         <Input
                             label="Reveal date*"
                             type="date"
@@ -213,22 +183,15 @@ export default function NewCapsulePage() {
                         id="tags"
                         name="tags"
                         placeholder="Nature, breeze, adventure..."
-                        style={{ maxWidth: "25rem" }}
+                        className="tags"
                     />
                 </div>
 
                 <div className="my-8">
-                    <div style={{ marginBottom: 4 }} className="fs-label-text">
-                        Visibility
-                    </div>
+                    <div className="fs-label-text mb-4">Visibility</div>
                     <div
                         role="radiogroup"
-                        className="d-flex align-items-center text-gray-700 bg-gray-100 rounded-lg"
-                        style={{
-                            width: "fit-content",
-                            gap: 4,
-                            padding: 6,
-                        }}
+                        className="visibility-group d-flex align-items-center gap-1 p-1.5 text-gray-700 bg-gray-100 rounded-lg"
                     >
                         {VISIBILITIES.map(v => (
                             <RadioItem
@@ -244,17 +207,10 @@ export default function NewCapsulePage() {
                 </div>
 
                 <div className="my-8">
-                    <div style={{ marginBottom: 4 }} className="fs-label-text">
-                        Color
-                    </div>
+                    <div className="mb-1 fs-label-text">Color</div>
                     <div
                         role="radiogroup"
-                        style={{
-                            width: "fit-content",
-                            gap: 10,
-                            padding: 6,
-                        }}
-                        className="d-flex align-items-center text-gray-700 bg-gray-100 rounded-lg"
+                        className="color-group p-1.5 text-gray-700 bg-gray-100 rounded-lg"
                     >
                         {COLORS.map(clr => (
                             <ColorSwatch
@@ -270,14 +226,10 @@ export default function NewCapsulePage() {
                 <div className="my-8">
                     <label className="d-inline-flex align-items-center justify-center fs-label-text">
                         <input
-                            style={{
-                                height: ".85lh",
-                                aspectRatio: "1/1",
-                                marginInlineEnd: 8,
-                            }}
                             type="checkbox"
                             name="is_surprise_mode"
                             id="is_surprise_mode"
+                            className="checkbox"
                         />
                         <span>Surprise mode</span>
                     </label>
@@ -294,56 +246,3 @@ export default function NewCapsulePage() {
         </form>
     );
 }
-
-function TypeCardItem({ icon, text, style, onClick, isSelected }) {
-    const IconComponent = icon;
-    return (
-        <button
-            type="button"
-            onClick={onClick}
-            className={cls(
-                "card-animate rounded-2xl p-4 p text-primary-900 bg-primary-100 fs-body-bold",
-                isSelected && "bg-primary-300",
-            )}
-            style={{
-                border: "1px solid var(--color-primary-300)",
-                display: "inline-flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                minHeight: "12.5rem",
-                gap: 12,
-                flex: 1,
-                ...style,
-            }}
-        >
-            <IconComponent style={{ fontSize: 48 }} />
-            <div>{text}</div>
-        </button>
-    );
-}
-
-// function SegmentedControl({ options, icon, selected, onChange }) {
-//     return (
-//         <div
-//             role="radiogroup"
-//             className="segmented-control d-flex align-items-center text-gray-700 bg-gray-100 rounded-lg"
-//             style={{
-//                 width: "fit-content",
-//                 gap: 4,
-//                 padding: 6,
-//             }}
-//         >
-//             {options.map(opt => (
-//                 <RadioItem
-//                     key={opt.value}
-//                     icon={opt.icon}
-//                     isSelected={visibility === opt.value}
-//                     value={opt.value}
-//                     text={opt.text}
-//                     onClick={setVisibility}
-//                 />
-//             ))}
-//         </div>
-//     );
-// }

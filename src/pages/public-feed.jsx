@@ -54,13 +54,7 @@ export default function PublicFeedPage() {
             <h1 className="fs-h1">Public Feed</h1>
 
             <section className="my-8">
-                <div
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                    }}
-                >
+                <div className="d-flex justify-between align-items-center">
                     <Input
                         type="search"
                         id="search"
@@ -101,15 +95,7 @@ export default function PublicFeedPage() {
                 </div>
             </div>
 
-            <section
-                style={{
-                    display: "grid",
-                    gridTemplateColumns:
-                        "repeat(auto-fill, minmax(16.5rem, 1fr))",
-                    columnGap: 24,
-                    rowGap: 40,
-                }}
-            >
+            <section className="time-capsule-grid">
                 {isLoading ? (
                     <LoadingSkeleton />
                 ) : error ? (

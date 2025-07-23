@@ -89,3 +89,15 @@
 .flex-1 {
     flex: 1;
 }
+
+/* Grid columns */
+.col-span-full {
+    grid-column: 1 / -1;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}

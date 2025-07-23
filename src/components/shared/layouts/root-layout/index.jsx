@@ -8,14 +8,7 @@ export default function RootLayout() {
     const isAuthPage = NO_NAVBAR_PAGES.includes(pathname);
 
     return (
-        <div
-            style={{
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                accentColor: "var(--color-primary-500)",
-            }}
-        >
+        <div className="root-layout">
             {!isAuthPage && <Navbar />}
             <Outlet />
         </div>

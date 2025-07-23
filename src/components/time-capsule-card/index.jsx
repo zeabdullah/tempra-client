@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import EyeClosedIcon from "../../icons/eye-closed";
-import UserAvatar from "../shared/user-avatar";
-import "./styles.css";
+import MapPinSimpleIcon from "../../icons/map-pin-simple";
+import CalendarDotsIcon from "../../icons/calendar-dots";
 import cls from "../../lib/classnames";
+import UserAvatar from "../shared/user-avatar";
 import { timeCapsuleCardClasses } from "./variants";
+import "./styles.css";
 
 export default function TimeCapsuleCard({
     id,
@@ -40,13 +41,13 @@ export default function TimeCapsuleCard({
                     </p>
 
                     <p className="time-capsule-card__meta-item">
-                        <EyeClosedIcon className="time-capsule-card__meta-icon" />
+                        <MapPinSimpleIcon className="time-capsule-card__meta-icon" />
                         <span className="time-capsule-card__meta-text fs-caption">
                             {location}
                         </span>
                     </p>
                     <p className="time-capsule-card__meta-item">
-                        <EyeClosedIcon className="time-capsule-card__meta-icon" />
+                        <CalendarDotsIcon className="time-capsule-card__meta-icon" />
                         <time className="time-capsule-card__meta-text fs-caption">
                             {date}
                         </time>

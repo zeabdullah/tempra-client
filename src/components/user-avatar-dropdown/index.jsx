@@ -3,12 +3,12 @@ import UserAvatar from "../shared/user-avatar";
 import ChevronDownIcon from "../../icons/chevron-down";
 import "./styles.css";
 import Auth from "../../lib/auth";
-import useAuth from "../../lib/hooks/use-auth";
+import useSession from "../../lib/hooks/use-session";
 import { useCallback } from "react";
 
 export default function UserAvatarDropdown() {
     const navigate = useNavigate();
-    const { user } = useAuth();
+    const { user } = useSession();
 
     const handleSelect = useCallback(
         e => {

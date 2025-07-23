@@ -33,20 +33,9 @@ export default function ForgotPasswordPage() {
         <>
             <AuthLayoutHeader title="Forgot your password?" />
 
-            <form
-                onSubmit={handleSubmit}
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    minWidth: "100%",
-                    gap: "var(--spacing-4)",
-                }}
-            >
+            <form onSubmit={handleSubmit} className="auth-layout-form">
                 {error && (
-                    <p
-                        style={{ border: "1px solid var(--color-danger-300)" }}
-                        className="bg-danger-100 text-danger-900 rounded-lg p-3"
-                    >
+                    <p className="alert-box border-danger-300 bg-danger-100 text-danger-900 rounded-lg p-3">
                         {error.message}
                     </p>
                 )}
